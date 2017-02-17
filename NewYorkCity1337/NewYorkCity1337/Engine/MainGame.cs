@@ -14,6 +14,8 @@ namespace NewYorkCity1337.Engine
         public MainGame(IGameView startingView)
         {
             _graphicsManager = new GraphicsDeviceManager(this);
+            _graphicsManager.PreferredBackBufferWidth = new TileSize().Get() * 30;
+            _graphicsManager.PreferredBackBufferHeight = new TileSize().Get() * 16; 
             _currentView = startingView;
             Content.RootDirectory = "Content";
         }

@@ -19,7 +19,8 @@ namespace Graphics
 
         public void Go()
         {
-            new SpritesBatchInstance().Draw(texture, new Vector2(location.Row, location.Column) * new TileSize().Get());
+            var size = new TileSize().Get();
+            new SpritesBatchInstance().Draw(texture, new Rectangle(location.Row * size, location.Column * size, size, size));
         }
     }
 }

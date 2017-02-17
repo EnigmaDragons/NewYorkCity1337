@@ -18,6 +18,11 @@ namespace NewYorkCity1337.Engine
             spritesInstance.Draw(texture, pixelPosition);
         }
 
+        public void Draw(Texture2D texture, Rectangle rectPostion)
+        {
+            spritesInstance.Draw(texture, rectPostion, Color.White);
+        }
+
         public void DrawText(string text, Vector2 pixelPosition, Color color)
         {
             spritesInstance.DrawString(DefaultFont.Font, text, pixelPosition, color);

@@ -31,10 +31,10 @@ namespace NewYorkCity1337.UI
 
         public void LoadContent()
         {
-            _panelShadow = new RectangleTexture(37, _buildings.Count * 50 + 5, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
-            _panelBorder = new RectangleTexture(36, _buildings.Count * 50 + 4, Color.Black).Create();
-            _panel = new RectangleTexture(32, _buildings.Count * 50, Color.Gray).Create();
-            _highlight = new RectangleTexture(32, 50, Color.FromNonPremultiplied(255, 0, 0, 80)).Create();
+            _panelShadow = new RectangleTexture(69, _buildings.Count * 91 + 5, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
+            _panelBorder = new RectangleTexture(68, _buildings.Count * 91 + 4, Color.Black).Create();
+            _panel = new RectangleTexture(64, _buildings.Count * 91, Color.Gray).Create();
+            _highlight = new RectangleTexture(64, 91, Color.FromNonPremultiplied(255, 0, 0, 80)).Create();
             _buildings.ForEach(x => x.LoadContent());
         }
 
@@ -58,12 +58,12 @@ namespace NewYorkCity1337.UI
             new DrawOnScreen(_panelBorder, _screenPosition - new Vector2(2, 2)).Go();
             new DrawOnScreen(_panel, _screenPosition).Go();
             if (_selectedIndex > -1)
-                new DrawOnScreen(_highlight, _screenPosition + new Vector2(0, _selectedIndex * 50)).Go();
+                new DrawOnScreen(_highlight, _screenPosition + new Vector2(0, _selectedIndex * 91)).Go();
             for (var i = 0; i < _buildings.Count; i++)
             {
-                new DrawOnScreen(_buildings[i].DisplayImage,
-                    new Vector2(_screenPosition.X, _screenPosition.Y + i * 50)).Go();
-                new DrawTextOnScreen(_buildings[i].Price.ToString(), new Vector2(_screenPosition.X + 14 - _buildings[i].Price.ToString().Length * 4, _screenPosition.Y + i * 50 + 32)).Go();
+                new DrawRectOnScreen(_buildings[i].DisplayImage,
+                    new Vector2(_screenPosition.X, _screenPosition.Y + i * 91), 64, 64).Go();
+                new DrawTextOnScreen(_buildings[i].Price.ToString(), new Vector2(_screenPosition.X + 30 - _buildings[i].Price.ToString().Length * 6, _screenPosition.Y + i * 91 + 64)).Go();
             }
         }
 
@@ -81,9 +81,9 @@ namespace NewYorkCity1337.UI
         private int GetBuilding(Point mousePos)
         {
             var screenPoint = _screenPosition.ToPoint();
-            if (IsInRange(mousePos.X, screenPoint.X, screenPoint.X + 50))
+            if (IsInRange(mousePos.X, screenPoint.X, screenPoint.X + 91))
             {
-                var buildingNumber = (mousePos.Y - screenPoint.Y) / 50;
+                var buildingNumber = (mousePos.Y - screenPoint.Y) / 91;
                 if (IsInRange(buildingNumber, 0, _buildings.Count - 1))
                     return buildingNumber;
             }

@@ -2,7 +2,7 @@
 {
     public class TileSize
     {
-        private const int size = 32;
+        private const int size = 64;
 
         public int Get()
         {

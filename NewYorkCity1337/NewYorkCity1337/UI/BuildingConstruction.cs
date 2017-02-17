@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using NewYorkCity1337.Buildings;
 using NewYorkCity1337.Business;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.Input;
@@ -19,6 +20,8 @@ namespace NewYorkCity1337.UI
         private SoundEffect buySoundEffect;
         private SoundEffect insufficientCashSoundEffect;
         private MoneyAccount moneyAccount;
+
+        private Building selectedBuilding;
 
         public BuildingConstruction(MoneyAccount moneyAccount, SelectedTile selectedTile, BuildingSelectionOverlay buildingSelection)
         {
@@ -44,12 +47,15 @@ namespace NewYorkCity1337.UI
             var state = Mouse.GetState();
 
             if (state.LeftButton == ButtonState.Released && prevState.LeftButton == ButtonState.Pressed)
-                if (IsBuildingSelected())
+                if (IsBuildingSelected() && buildingSelection.GetSelectedBuilding() == selectedBuilding)
                     if (moneyAccount.EnoughMoney(buildingSelection.GetSelectedBuilding().Price))
                         BuyBuilding();
                     else
                         NotifyInsufficientFunds();
-                
+                else
+                    selectedBuilding = buildingSelection.GetSelectedBuilding();
+
+
             prevState = state;
         }
 

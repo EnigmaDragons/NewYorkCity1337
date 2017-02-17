@@ -23,7 +23,7 @@ namespace NewYorkCity1337.View
         public MapView()
         {
             var road = new Random(Guid.NewGuid().GetHashCode()).Next(0, 15);
-            var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
+            var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 30)
                 .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
             new CurrentMap().SetMap(map);
             var moneyAccount = new MoneyAccount();
