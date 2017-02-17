@@ -47,6 +47,7 @@
     <Compile Include="Engine\MainGame.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animations.cs" />
+    <Compile Include="Graphics\LoadedTextures.cs" />
     <Compile Include="MonoGame\LoadedSong.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
     <Compile Include="MonoGame\RectangleTexture.cs" />
@@ -63,6 +64,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\building1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\building2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\building3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\building4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\building5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Images\grass1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
