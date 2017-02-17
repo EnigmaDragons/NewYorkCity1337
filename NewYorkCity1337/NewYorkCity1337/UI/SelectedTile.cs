@@ -17,7 +17,7 @@ namespace NewYorkCity1337.Input
 
         public void LoadContent()
         {
-            selectedBox = new RectangleTexture(new TileSize().Get(), new TileSize().Get(), Color.FromNonPremultiplied(80, 20, 20, 30)).Create();
+            selectedBox = new RectangleTexture(new TileSize().Get(), new TileSize().Get(), Color.FromNonPremultiplied(100, 80, 0, 40)).Create();
         }
 
         public void UnloadContent()
