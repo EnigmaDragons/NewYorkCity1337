@@ -54,6 +54,8 @@
     <Compile Include="Graphics\DrawRectOnScreen.cs" />
     <Compile Include="Graphics\DrawTextOnScreen.cs" />
     <Compile Include="Graphics\TileSize.cs" />
+    <Compile Include="Input\IfMouseIsOnScreen.cs" />
+    <Compile Include="Math\IsInRangeInclusive.cs" />
     <Compile Include="Sound\LoadedSoundEffect.cs" />
     <Compile Include="UI\BuildingConstruction.cs" />
     <Compile Include="UI\SelectedTile.cs" />

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Graphics;
+using Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -45,11 +46,12 @@ namespace NewYorkCity1337.UI
 
         public void Update(GameTime deltaTime)
         {
-            var mouseState = Mouse.GetState();
-            OnMouseOver(mouseState.Position);
-
-            if (mouseState.LeftButton == ButtonState.Pressed)
-                OnMouseLeftClick(mouseState.Position);
+            IfMouseIsOnScreen.Execute(mouse =>
+            {
+                OnMouseOver(mouse.Position);
+                if (mouse.LeftButton == ButtonState.Pressed)
+                    OnMouseLeftClick(mouse.Position);
+            });
         }
 
         public void Draw()

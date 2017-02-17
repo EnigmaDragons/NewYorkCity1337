@@ -24,9 +24,9 @@ namespace NewYorkCity1337.UI
 
         public void LoadContent()
         {
-            _panelShadow = new RectangleTexture(128, 31, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
-            _panelBorder = new RectangleTexture(128, 31, Color.Black).Create();
-            _panel = new RectangleTexture(124, 27, Color.Gray).Create();
+            _panelShadow = new RectangleTexture(184, 34, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
+            _panelBorder = new RectangleTexture(184, 34, Color.Black).Create();
+            _panel = new RectangleTexture(180, 30, Color.Gray).Create();
         }
 
         public void UnloadContent()
@@ -45,7 +45,7 @@ namespace NewYorkCity1337.UI
             new DrawOnScreen(_panelShadow, _screenPosition).Go();
             new DrawOnScreen(_panelBorder, _screenPosition - new Vector2(2, 2)).Go();
             new DrawOnScreen(_panel, _screenPosition).Go();
-            new DrawTextOnScreen(_moneyAccount.AmountAndCurrency, _screenPosition + new Vector2(2, 1)).Go();
+            new DrawTextOnScreen("Money: " + _moneyAccount.AmountAndCurrency, _screenPosition + new Vector2(2, 1)).Go();
         }
     }
 }
