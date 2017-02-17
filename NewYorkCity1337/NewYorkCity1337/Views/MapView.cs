@@ -30,10 +30,10 @@ namespace NewYorkCity1337.View
             objs.Add(map);
             var selectedTile = new SelectedTile();
             objs.Add(selectedTile);
-            var buildingSelection = new BuildingSelectionOverlay();
+            var buildingSelection = new BuildingSelectionOverlay(new Vector2(460, 40));
             objs.Add(buildingSelection);
             objs.Add(new BuildingConstruction(moneyAccount, selectedTile, buildingSelection));
-            objs.Add(new MoneyAccountOverlay(moneyAccount, new Vector2(100, 10)));
+            objs.Add(new MoneyAccountOverlay(moneyAccount, new Vector2(370, 10)));
 
         }
 

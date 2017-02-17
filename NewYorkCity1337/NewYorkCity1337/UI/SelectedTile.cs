@@ -1,7 +1,8 @@
 ﻿using Graphics;
+using Input;
+using Math;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.Graphics;
 using NewYorkCity1337.TileEngine;
@@ -26,12 +27,14 @@ namespace NewYorkCity1337.Input
 
         public void Update(GameTime deltaTime)
         {
-            var state = Mouse.GetState();
-            var tile = new TileLocation(new Vector2(state.Y, state.X));
-            if (new CurrentMap().Get().Exist(tile))
-                currentLocation = tile;
+            IfMouseIsOnScreen.Execute(mouse =>
+            {
+                var tile = new TileLocation(new Vector2(mouse.Y, mouse.X));
+                if (new CurrentMap().Get().Exist(tile))
+                    currentLocation = tile;
+            });
         }
-
+        
         public void Draw()
         {
             new DrawOnTile(selectedBox, currentLocation).Go();

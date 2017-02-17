@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Input;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -41,16 +42,17 @@ namespace NewYorkCity1337.UI
 
         public void Update(GameTime deltaTime)
         {
-            var state = Mouse.GetState();
+            IfMouseIsOnScreen.Execute(mouse =>
+            {
+                if (mouse.LeftButton == ButtonState.Released && prevState.LeftButton == ButtonState.Pressed)
+                    if (IsBuildingSelected())
+                        if (moneyAccount.EnoughMoney(buildingSelection.GetSelectedBuilding().Price))
+                            BuyBuilding();
+                        else
+                            NotifyInsufficientFunds();
 
-            if (state.LeftButton == ButtonState.Released && prevState.LeftButton == ButtonState.Pressed)
-                if (IsBuildingSelected())
-                    if (moneyAccount.EnoughMoney(buildingSelection.GetSelectedBuilding().Price))
-                        BuyBuilding();
-                    else
-                        NotifyInsufficientFunds();
-                
-            prevState = state;
+                prevState = mouse;
+            });
         }
 
         private void NotifyInsufficientFunds()
