@@ -90,5 +90,10 @@ namespace NewYorkCity1337.UI
         {
             return val >= min && val <= max;
         }
+
+        public Building GetSelectedBuilding()
+        {
+            return _selectedIndex == -1 ? null : _buildings[_selectedIndex];
+        }
     }
 }

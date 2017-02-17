@@ -9,7 +9,7 @@ using NewYorkCity1337.Tiles;
 
 namespace NewYorkCity1337.Input
 {
-    public class MouseInput : IGameObject
+    public class SelectedTile : IGameObject
     {
         private Texture2D selectedBox;
         private TileLocation currentLocation = new TileLocation(0, 0);
@@ -36,5 +36,10 @@ namespace NewYorkCity1337.Input
         {
             new DrawOnTile(selectedBox, currentLocation).Go();
         }
+
+        public TileLocation GetCurrentSelectedTileLocation()
+        {
+            return currentLocation;
+        } 
     }
 }

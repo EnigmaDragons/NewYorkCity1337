@@ -51,8 +51,11 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Graphics\DefaultFont.cs" />
+    <Compile Include="Graphics\DrawTextOnScreen.cs" />
     <Compile Include="Graphics\TileSize.cs" />
-    <Compile Include="Input\MouseInput.cs" />
+    <Compile Include="Sound\LoadedSoundEffect.cs" />
+    <Compile Include="UI\BuildingConstruction.cs" />
+    <Compile Include="UI\SelectedTile.cs" />
     <Compile Include="Terrain\Grass.cs" />
     <Compile Include="TileEngine\CurrentMap.cs" />
     <Compile Include="TileEngine\IWorldObject.cs" />
@@ -120,18 +123,22 @@
     <Content Include="Content\Music\Terran Theme 1.wma">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\SoundEffect\cha-ching.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Arial.spritefont">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Content\Arial.spritefont" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\Music\Terran Theme 1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundEffect\cha-ching.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
