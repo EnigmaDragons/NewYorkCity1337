@@ -19,7 +19,10 @@ namespace NewYorkCity1337.UI
         private Texture2D _panelBorder;
         private Texture2D _panel;
         private Texture2D _highlight;
+        private Texture2D _hoverHighlight;
+
         private int _selectedIndex = -1;
+        private int _hoverIndex = -1;
 
         public BuildingSelectionOverlay()
             : this(new Vector2(10, 10)) { }
@@ -27,7 +30,8 @@ namespace NewYorkCity1337.UI
         public BuildingSelectionOverlay(Vector2 screenPosition)
         {
             _screenPosition = screenPosition;
-            _buildings = new List<Building> { new Beacon(), new Observatory(), new Antenna(), new Factory()};
+            _buildings = new List<Building> { new Beacon(), new Observatory(),
+                new Antenna(), new Factory(), new PowerGenerator()};
         }
 
         public void LoadContent()
@@ -36,6 +40,7 @@ namespace NewYorkCity1337.UI
             _panelBorder = new RectangleTexture(68, _buildings.Count * 91 + 4, Color.Black).Create();
             _panel = new RectangleTexture(64, _buildings.Count * 91, Color.Gray).Create();
             _highlight = new RectangleTexture(64, 91, Color.FromNonPremultiplied(255, 0, 0, 80)).Create();
+            _hoverHighlight = new RectangleTexture(64, 91, Color.FromNonPremultiplied(255, 0, 0, 40)).Create();
             _buildings.ForEach(x => x.LoadContent());
         }
 
@@ -61,6 +66,8 @@ namespace NewYorkCity1337.UI
             new DrawOnScreen(_panel, _screenPosition).Go();
             if (_selectedIndex > -1)
                 new DrawOnScreen(_highlight, _screenPosition + new Vector2(0, _selectedIndex * 91)).Go();
+            if (_hoverIndex > -1)
+                new DrawOnScreen(_hoverHighlight, _screenPosition + new Vector2(0, _hoverIndex * 91)).Go();
             for (var i = 0; i < _buildings.Count; i++)
             {
                 new DrawRectOnScreen(_buildings[i].DisplayImage,
@@ -71,6 +78,9 @@ namespace NewYorkCity1337.UI
 
         private void OnMouseOver(Point mousePos)
         {
+            var buildingNum = GetBuilding(mousePos);
+            if (buildingNum != -1)
+                _hoverIndex = buildingNum;
         }
 
         private void OnMouseLeftClick(Point mousePos)

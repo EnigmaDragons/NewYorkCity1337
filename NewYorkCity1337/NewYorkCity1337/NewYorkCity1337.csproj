@@ -44,6 +44,7 @@
     <Compile Include="Buildings\Building.cs" />
     <Compile Include="Buildings\Factory.cs" />
     <Compile Include="Buildings\Observatory.cs" />
+    <Compile Include="Buildings\PowerGenerator.cs" />
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\GraphicsDeviceInstance.cs" />
     <Compile Include="Engine\IGame.cs" />
