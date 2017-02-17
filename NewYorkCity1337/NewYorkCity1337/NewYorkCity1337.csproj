@@ -38,6 +38,10 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Antenna.cs" />
+    <Compile Include="Buildings\BasicBuilding.cs" />
+    <Compile Include="Buildings\Building.cs" />
+    <Compile Include="Buildings\Observatory.cs" />
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\GraphicsDeviceInstance.cs" />
     <Compile Include="Engine\IGame.cs" />
@@ -49,6 +53,7 @@
     <Compile Include="Engine\SpritesBatchInstance.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animations.cs" />
+    <Compile Include="Graphics\DrawOnScreen.cs" />
     <Compile Include="Graphics\DrawOnTile.cs" />
     <Compile Include="Graphics\LoadedTextures.cs" />
     <Compile Include="Sound\LoadedSong.cs" />
@@ -60,6 +65,7 @@
     <Compile Include="Tiles\Map.cs" />
     <Compile Include="Tiles\Tile.cs" />
     <Compile Include="Tiles\TileLocation.cs" />
+    <Compile Include="UI\BuildingSelectionOverlay.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\GrassTestView.cs" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.Tiles;
+using NewYorkCity1337.UI;
 
 namespace NewYorkCity1337.View
 {
