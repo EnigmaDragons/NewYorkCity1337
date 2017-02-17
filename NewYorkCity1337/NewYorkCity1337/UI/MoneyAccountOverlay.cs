@@ -45,7 +45,7 @@ namespace NewYorkCity1337.UI
             new DrawOnScreen(_panelShadow, _screenPosition).Go();
             new DrawOnScreen(_panelBorder, _screenPosition - new Vector2(2, 2)).Go();
             new DrawOnScreen(_panel, _screenPosition).Go();
-            new DrawTextOnScreen(_moneyAccount.AmountAndCurrency, _screenPosition + new Vector2(2, 2)).Go();
+            new DrawTextOnScreen(_moneyAccount.AmountAndCurrency, _screenPosition + new Vector2(2, 1)).Go();
         }
     }
 }
