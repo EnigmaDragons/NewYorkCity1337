@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewYorkCity1337.NewFolder1
+﻿
+namespace NewYorkCity1337.Business
 {
-    public class Cash
+    public class MoneyAccount
     {
         public string AmountAndCurrency { get { return "$" + amount; } }
         private int amount = 100;
