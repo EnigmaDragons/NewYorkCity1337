@@ -1,17 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using NewYorkCity1337.Engine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
+﻿using NewYorkCity1337.Engine;
+using NewYorkCity1337.Tiles;
 
 namespace NewYorkCity1337.NewFolder1
 {
-    public interface IBuilding : IGameObject
+    public interface IBuilding : IWorldObject
     {
-        Vector2 Location { get; }
         //Image Image { get; }
         string Name { get; }
         int Price { get; }

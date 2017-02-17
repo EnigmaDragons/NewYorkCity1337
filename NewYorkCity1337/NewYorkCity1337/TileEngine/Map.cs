@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
@@ -9,7 +10,7 @@ namespace NewYorkCity1337.Tiles
     {
         private List<Tile> tiles = new List<Tile>();
 
-        public Map(params Tile[] tiles)
+        public Map(IEnumerable<Tile> tiles)
         {
             this.tiles.AddRange(tiles);
         }
@@ -29,9 +30,24 @@ namespace NewYorkCity1337.Tiles
             tiles.ForEach(x => x.Update(deltaTime));
         }
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
-            tiles.ForEach(x => x.Draw(sprites));
+            tiles.ForEach(x => x.Draw());
+        }
+
+        public Tile Get(TileLocation loc)
+        {
+            return tiles.First(x => x.Location.Equals(loc));
+        }
+
+        public void MoveTo(IWorldObject gameObj, TileLocation current, TileLocation destination)
+        {
+            Get(current).Move(gameObj, Get(destination));
+        }
+
+        public void Enter(IWorldObject gameObj, TileLocation location)
+        {
+            Get(location).Enter(gameObj);
         }
     }
 }

@@ -19,13 +19,14 @@ namespace NewYorkCity1337.Engine
 
         protected override void Initialize()
         {
+            _sprites = new SpriteBatch(GraphicsDevice);
             new GameInstance().SetGame(this);
+            new SpritesBatchInstance().SetSpritesBatch(_sprites);
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _sprites = new SpriteBatch(GraphicsDevice);
             _currentView?.LoadContent();
         }
 
@@ -47,7 +48,7 @@ namespace NewYorkCity1337.Engine
         protected override void Draw(GameTime gameTime)
         {
             _sprites.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
-            _currentView?.Draw(_sprites);
+            _currentView?.Draw();
             _sprites.End();
             base.Draw(gameTime);
         }

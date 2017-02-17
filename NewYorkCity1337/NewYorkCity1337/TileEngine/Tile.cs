@@ -8,21 +8,23 @@ namespace NewYorkCity1337.Tiles
 {
     public class Tile : IGameObject
     {
+        private readonly IWorldObject[] objs;
         private readonly List<IWorldObject> gameObjs = new List<IWorldObject>();
-        private readonly Vector2 location;
+        public TileLocation Location { get; }
         private readonly string textureName;
 
         private Texture2D background; 
         
-        public Tile(Vector2 location, string textureName, params IWorldObject[] gameObjs)
+        public Tile(TileLocation location, string textureName, params IWorldObject[] gameObjs)
         {
-            this.location = location;
-            this.gameObjs.AddRange(gameObjs);
+            this.objs = gameObjs;
+            this.Location = location;
             this.textureName = textureName;
         }
 
         public void LoadContent()
         {
+            this.gameObjs.AddRange(gameObjs);
             background = new LoadedTexture(textureName).Get();
             gameObjs.ForEach(x => x.LoadContent());
         }
@@ -38,10 +40,26 @@ namespace NewYorkCity1337.Tiles
             gameObjs.ForEach(x => x.Update(deltaTime));
         }
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
-            new DrawnOnTile(background, location).Go();
-            gameObjs.ForEach(x => x.Draw(sprites, location));
+            new DrawOnTile(background, Location).Go();
+            gameObjs.ForEach(x => x.Draw(Location));
         }
+
+        public void Enter(IWorldObject gameObj)
+        {
+            gameObjs.Add(gameObj);
+        }
+
+        public void Exit(IWorldObject gameObj)
+        {
+            gameObjs.Remove(gameObj);
+        }
+
+        public void Move(IWorldObject gameObj, Tile destination)
+        {
+            Exit(gameObj);  
+            destination.Enter(gameObj);
+        } 
     }
 }
