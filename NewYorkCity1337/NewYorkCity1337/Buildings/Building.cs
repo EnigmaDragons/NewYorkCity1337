@@ -10,5 +10,6 @@ namespace NewYorkCity1337.Buildings
         Texture2D DisplayImage { get; }
         int Price { get; }
         void AssignOwner(MoneyAccount ownerAccount);
+        Building Clone();
     }
 }

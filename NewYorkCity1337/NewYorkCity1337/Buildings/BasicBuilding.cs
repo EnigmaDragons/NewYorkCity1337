@@ -30,6 +30,13 @@ namespace NewYorkCity1337.Buildings
             _income = income;
         }
 
+        public Building Clone()
+        {
+            var result = new BasicBuilding(DisplayName, _spriteName, Price, _income, _paymentInterval);
+            result.LoadContent();
+            return result;
+        }
+
         public void LoadContent()
         {
             _sprite = new LoadedTexture(_spriteName).Get();

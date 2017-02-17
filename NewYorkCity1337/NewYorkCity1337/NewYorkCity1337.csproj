@@ -126,6 +126,9 @@
     <Content Include="Content\SoundEffect\cha-ching.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\SoundEffect\invalid.wma">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -133,8 +136,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\Arial.spritefont" />
+    <Content Include="Content\SoundEffect\invalid.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Arial.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Music\Terran Theme 1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -26,13 +26,14 @@ namespace NewYorkCity1337.View
             var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
                 .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
             new CurrentMap().SetMap(map);
+            var moneyAccount = new MoneyAccount();
             objs.Add(map);
             var selectedTile = new SelectedTile();
             objs.Add(selectedTile);
             var buildingSelection = new BuildingSelectionOverlay();
             objs.Add(buildingSelection);
-            objs.Add(new BuildingConstruction(selectedTile, buildingSelection));
-            objs.Add(new MoneyAccountOverlay(new MoneyAccount(), new Vector2(100, 10)));
+            objs.Add(new BuildingConstruction(moneyAccount, selectedTile, buildingSelection));
+            objs.Add(new MoneyAccountOverlay(moneyAccount, new Vector2(100, 10)));
 
         }
 
