@@ -25,7 +25,7 @@ namespace NewYorkCity1337.UI
         public BuildingSelectionOverlay(Vector2 screenPosition)
         {
             _screenPosition = screenPosition;
-            _buildings = new List<Building> {new Observatory(), new Antenna()};
+            _buildings = new List<Building> { new Beacon(), new Observatory(), new Antenna(), new Factory()};
         }
 
         public void LoadContent()

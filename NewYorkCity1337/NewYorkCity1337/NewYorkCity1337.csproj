@@ -40,7 +40,9 @@
   <ItemGroup>
     <Compile Include="Buildings\Antenna.cs" />
     <Compile Include="Buildings\BasicBuilding.cs" />
+    <Compile Include="Buildings\Beacon.cs" />
     <Compile Include="Buildings\Building.cs" />
+    <Compile Include="Buildings\Factory.cs" />
     <Compile Include="Buildings\Observatory.cs" />
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\GraphicsDeviceInstance.cs" />
@@ -81,6 +83,9 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +118,6 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
