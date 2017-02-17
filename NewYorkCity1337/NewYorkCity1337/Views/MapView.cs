@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using NewYorkCity1337.Business;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.Input;
 using NewYorkCity1337.Terrain;
@@ -28,6 +29,7 @@ namespace NewYorkCity1337.View
             var buildingSelection = new BuildingSelectionOverlay();
             objs.Add(buildingSelection);
             objs.Add(new BuildingConstruction(selectedTile, buildingSelection));
+            objs.Add(new MoneyAccountOverlay(new MoneyAccount(), new Vector2(100, 10)));
 
         }
 
