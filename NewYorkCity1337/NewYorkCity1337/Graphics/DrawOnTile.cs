@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
 
-namespace NewYorkCity1337.Graphics
+namespace Graphics
 {
     public class DrawOnTile
     {

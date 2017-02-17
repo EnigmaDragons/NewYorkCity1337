@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
+using Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
-using NewYorkCity1337.Graphics;
-using RunehackValley.MonoGame;
 
 namespace NewYorkCity1337.Tiles
 {
