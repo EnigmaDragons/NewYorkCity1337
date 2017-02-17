@@ -39,5 +39,10 @@ namespace NewYorkCity1337.Tiles
         {
             return tiles.First(x => x.Location.Equals(loc));
         }
+
+        public void MoveTo(IWorldObject gameObj, TileLocation current, TileLocation destination)
+        {
+            Get(current).Move(gameObj, Get(destination));
+        }
     }
 }

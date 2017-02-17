@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using NewYorkCity1337.Engine;
+using NewYorkCity1337.Terrain;
 using NewYorkCity1337.Tiles;
 
 namespace NewYorkCity1337.View
@@ -11,7 +13,8 @@ namespace NewYorkCity1337.View
 
         public MapView()
         {
-            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16).Select(y => new Tile(new TileLocation(x, y), "grass1"))));
+            var road = new Random(Guid.NewGuid().GetHashCode()).Next(0, 16);
+            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16).Select(y => x == road ? (Tile)new Road(new TileLocation(x, y)) : (Tile)new Grass(new TileLocation(x, y)))));
         }
 
         public void LoadContent()
