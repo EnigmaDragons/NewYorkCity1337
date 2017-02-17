@@ -48,7 +48,9 @@
     <Compile Include="Engine\IGameObject.cs" />
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
-    <Compile Include="Engine\IWorldObject.cs" />
+    <Compile Include="Terrain\Grass.cs" />
+    <Compile Include="TileEngine\CurrentMap.cs" />
+    <Compile Include="TileEngine\IWorldObject.cs" />
     <Compile Include="Engine\MainGame.cs" />
     <Compile Include="Engine\SpritesBatchInstance.cs" />
     <Compile Include="Graphics\Animation.cs" />
@@ -56,18 +58,22 @@
     <Compile Include="Graphics\DrawOnScreen.cs" />
     <Compile Include="Graphics\DrawOnTile.cs" />
     <Compile Include="Graphics\LoadedTextures.cs" />
+    <Compile Include="NewFolder1\BuildingInterface.cs" />
+    <Compile Include="NewFolder1\Cash.cs" />
+    <Compile Include="NewFolder1\House.cs" />
     <Compile Include="Sound\LoadedSong.cs" />
     <Compile Include="Graphics\LoadedTexture.cs" />
     <Compile Include="Graphics\RectangleTexture.cs" />
     <Compile Include="Graphics\ViewBackgroundColor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tiles\Map.cs" />
-    <Compile Include="Tiles\Tile.cs" />
-    <Compile Include="Tiles\TileLocation.cs" />
     <Compile Include="UI\BuildingSelectionOverlay.cs" />
+    <Compile Include="TileEngine\Map.cs" />
+    <Compile Include="TileEngine\Tile.cs" />
+    <Compile Include="TileEngine\TileLocation.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\GrassTestView.cs" />
+    <Compile Include="WorldObjects\Road.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -95,14 +101,18 @@
     <Content Include="Content\Images\grass1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Images\road-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\road-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Terrain\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
