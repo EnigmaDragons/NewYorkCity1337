@@ -24,7 +24,7 @@ namespace NewYorkCity1337.Tiles
 
         public void LoadContent()
         {
-            this.gameObjs.AddRange(gameObjs);
+            this.gameObjs.AddRange(objs);
             background = new LoadedTexture(textureName).Get();
             gameObjs.ForEach(x => x.LoadContent());
         }

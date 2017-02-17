@@ -45,7 +45,6 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Terrain\Grass.cs" />
-    <Compile Include="Terrain\Road.cs" />
     <Compile Include="TileEngine\CurrentMap.cs" />
     <Compile Include="TileEngine\IWorldObject.cs" />
     <Compile Include="Engine\MainGame.cs" />
@@ -68,6 +67,7 @@
     <Compile Include="TileEngine\TileLocation.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\GrassTestView.cs" />
+    <Compile Include="WorldObjects\Road.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

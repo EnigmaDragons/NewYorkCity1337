@@ -6,6 +6,7 @@ using NewYorkCity1337.Terrain;
 using NewYorkCity1337.Tiles;
 using NewYorkCity1337.TileEngine;
 using NewYorkCity1337.NewFolder1;
+using NewYorkCity1337.WorldObjects;
 
 namespace NewYorkCity1337.View
 {
@@ -16,7 +17,8 @@ namespace NewYorkCity1337.View
         public MapView()
         {
             var road = new Random(Guid.NewGuid().GetHashCode()).Next(0, 16);
-            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16).Select(y => x == road ? (Tile)new Road(new TileLocation(x, y)) : (Tile)new Grass(new TileLocation(x, y)))));
+            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
+                .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
         }
 
         public void LoadContent()
