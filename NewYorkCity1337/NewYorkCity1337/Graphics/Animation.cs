@@ -3,9 +3,8 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
-using RunehackValley.MonoGame;
 
-namespace RunehackValley.Graphics
+namespace Graphics
 {
     public class Animation : IGameObject
     {

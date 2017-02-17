@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-using RunehackValley.MonoGame;
 
-namespace NewYorkCity1337.Graphics
+namespace Graphics
 {
     public class LoadedTextures
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Media;
 using NewYorkCity1337.Engine;
 
-namespace RunehackValley.MonoGame
+namespace Sound
 {
     public class LoadedSong
     {
