@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewYorkCity1337.Graphics
+﻿namespace NewYorkCity1337.Graphics
 {
-    class SpriteSize
+    public class TileSize
     {
+        private const int size = 32;
+
+        public int Get()
+        {
+            return size;
+        }
     }
 }

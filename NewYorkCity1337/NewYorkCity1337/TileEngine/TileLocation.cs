@@ -1,9 +1,14 @@
-﻿namespace NewYorkCity1337.Tiles
+﻿using Microsoft.Xna.Framework;
+using NewYorkCity1337.Graphics;
+
+namespace NewYorkCity1337.Tiles
 {
     public class TileLocation
     {
         public int Column { get; }
         public int Row { get; }
+
+        public TileLocation(Vector2 pixelLoc) : this((int)pixelLoc.X / new TileSize().Get(), (int)pixelLoc.Y / new TileSize().Get()) {}
 
         public TileLocation(int column, int row)
         {

@@ -35,6 +35,11 @@ namespace NewYorkCity1337.Tiles
             tiles.ForEach(x => x.Draw());
         }
 
+        public bool Exist(TileLocation loc)
+        {
+            return tiles.Any(x => x.Location.Equals(loc));
+        }
+
         public Tile Get(TileLocation loc)
         {
             return tiles.First(x => x.Location.Equals(loc));
