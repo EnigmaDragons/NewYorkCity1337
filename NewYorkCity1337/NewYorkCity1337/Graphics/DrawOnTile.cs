@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
+using NewYorkCity1337.Graphics;
 using NewYorkCity1337.Tiles;
 
 namespace Graphics
@@ -18,7 +19,7 @@ namespace Graphics
 
         public void Go()
         {
-            new SpritesBatchInstance().Draw(texture, new Vector2(location.Row, location.Column) * 32);
+            new SpritesBatchInstance().Draw(texture, new Vector2(location.Row, location.Column) * new TileSize().Get());
         }
     }
 }

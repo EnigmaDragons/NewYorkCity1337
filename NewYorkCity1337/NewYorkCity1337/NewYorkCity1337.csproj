@@ -48,6 +48,8 @@
     <Compile Include="Engine\IGameObject.cs" />
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
+    <Compile Include="Graphics\TileSize.cs" />
+    <Compile Include="Input\MouseInput.cs" />
     <Compile Include="Terrain\Grass.cs" />
     <Compile Include="TileEngine\CurrentMap.cs" />
     <Compile Include="TileEngine\IWorldObject.cs" />
@@ -59,7 +61,6 @@
     <Compile Include="Graphics\DrawOnTile.cs" />
     <Compile Include="Graphics\LoadedTextures.cs" />
     <Compile Include="Business\MoneyAccount.cs" />
-    <Compile Include="NewFolder1\House.cs" />
     <Compile Include="Sound\LoadedSong.cs" />
     <Compile Include="Graphics\LoadedTexture.cs" />
     <Compile Include="Graphics\RectangleTexture.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="TileEngine\Map.cs" />
     <Compile Include="TileEngine\Tile.cs" />
     <Compile Include="TileEngine\TileLocation.cs" />
+    <Compile Include="UI\MoneyAccountOverlay.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\GrassTestView.cs" />
     <Compile Include="WorldObjects\Road.cs" />

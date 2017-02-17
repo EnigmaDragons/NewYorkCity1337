@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using NewYorkCity1337.Engine;
+using NewYorkCity1337.Input;
 using NewYorkCity1337.Terrain;
+using NewYorkCity1337.TileEngine;
 using NewYorkCity1337.Tiles;
 using NewYorkCity1337.WorldObjects;
 
@@ -10,33 +13,36 @@ namespace NewYorkCity1337.View
 {
     public class MapView : IGameView
     {
-        private readonly Map map;
+        private readonly List<IGameObject> objs = new List<IGameObject>();
 
         public MapView()
         {
-            var road = new Random(Guid.NewGuid().GetHashCode()).Next(0, 16);
-            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
+            var road = new Random(Guid.NewGuid().GetHashCode()).Next(1, 16);
+            var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
                 .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
+            new CurrentMap().SetMap(map);
+            objs.Add(map);
+            objs.Add(new MouseInput());
         }
 
         public void LoadContent()
         {
-            map.LoadContent();
+            objs.ForEach(x => x.LoadContent());
         }
 
         public void UnloadContent()
         {
-           map.UnloadContent();
+            objs.ForEach(x => x.UnloadContent());
         }
 
         public void Update(GameTime deltaTime)
         {
-           map.Update(deltaTime);
+            objs.ForEach(x => x.Update(deltaTime));
         }
 
         public void Draw()
         {
-            map.Draw();
+            objs.ForEach(x => x.Draw());
         }
     }
 }

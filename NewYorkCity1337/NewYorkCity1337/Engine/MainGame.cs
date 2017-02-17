@@ -28,6 +28,7 @@ namespace NewYorkCity1337.Engine
 
         protected override void LoadContent()
         {
+            IsMouseVisible = true;
             _currentView?.LoadContent();
         }
 

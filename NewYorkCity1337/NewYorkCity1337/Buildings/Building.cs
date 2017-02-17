@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Business;
 using NewYorkCity1337.Engine;
-using NewYorkCity1337.NewFolder1;
 
 namespace NewYorkCity1337.Buildings
 {
