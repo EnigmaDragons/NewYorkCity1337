@@ -49,7 +49,8 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Graphics\TileSize.cs" />
-    <Compile Include="Input\MouseInput.cs" />
+    <Compile Include="UI\BuildingConstruction.cs" />
+    <Compile Include="UI\SelectedTile.cs" />
     <Compile Include="NewFolder1\BuildingInterface.cs" />
     <Compile Include="NewFolder1\Cash.cs" />
     <Compile Include="NewFolder1\House.cs" />

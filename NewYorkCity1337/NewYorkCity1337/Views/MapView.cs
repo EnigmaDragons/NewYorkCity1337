@@ -7,6 +7,7 @@ using NewYorkCity1337.Input;
 using NewYorkCity1337.Terrain;
 using NewYorkCity1337.TileEngine;
 using NewYorkCity1337.Tiles;
+using NewYorkCity1337.UI;
 using NewYorkCity1337.WorldObjects;
 
 namespace NewYorkCity1337.View
@@ -22,7 +23,12 @@ namespace NewYorkCity1337.View
                 .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
             new CurrentMap().SetMap(map);
             objs.Add(map);
-            objs.Add(new MouseInput());
+            var selectedTile = new SelectedTile();
+            objs.Add(selectedTile);
+            var buildingSelection = new BuildingSelectionOverlay();
+            objs.Add(buildingSelection);
+            objs.Add(new BuildingConstruction(selectedTile, buildingSelection));
+
         }
 
         public void LoadContent()
