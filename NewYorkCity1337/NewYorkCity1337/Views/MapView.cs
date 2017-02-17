@@ -11,7 +11,7 @@ namespace NewYorkCity1337.View
 
         public MapView()
         {
-            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16).Select(y => new Tile(new Vector2(x, y), "grass1"))));
+            map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16).Select(y => new Tile(new TileLocation(x, y), "grass1"))));
         }
 
         public void LoadContent()

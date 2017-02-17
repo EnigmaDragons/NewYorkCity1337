@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewYorkCity1337.Engine;
@@ -32,6 +33,11 @@ namespace NewYorkCity1337.Tiles
         public void Draw()
         {
             tiles.ForEach(x => x.Draw());
+        }
+
+        public Tile Get(TileLocation loc)
+        {
+            return tiles.First(x => x.Location.Equals(loc));
         }
     }
 }

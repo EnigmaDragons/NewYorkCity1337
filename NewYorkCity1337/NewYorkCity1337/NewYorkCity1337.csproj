@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\Map.cs" />
     <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Tiles\TileLocation.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\GrassTestView.cs" />
   </ItemGroup>

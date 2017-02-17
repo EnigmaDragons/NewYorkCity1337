@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using NewYorkCity1337.Tiles;
 
 namespace NewYorkCity1337.Engine
 {
@@ -7,6 +8,6 @@ namespace NewYorkCity1337.Engine
         void LoadContent();
         void UnloadContent();
         void Update(GameTime deltaTime);
-        void Draw(Vector2 location);
+        void Draw(TileLocation location);
     }
 }
