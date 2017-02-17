@@ -10,12 +10,15 @@ using NewYorkCity1337.TileEngine;
 using NewYorkCity1337.Tiles;
 using NewYorkCity1337.UI;
 using NewYorkCity1337.WorldObjects;
+using Microsoft.Xna.Framework.Media;
+using Sound;
 
 namespace NewYorkCity1337.View
 {
     public class MapView : IGameView
     {
         private readonly List<IGameObject> objs = new List<IGameObject>();
+        private Song backgroundTrack;
 
         public MapView()
         {
@@ -36,11 +39,15 @@ namespace NewYorkCity1337.View
 
         public void LoadContent()
         {
+            backgroundTrack = new LoadedSong("Terran Theme 1").Get();
             objs.ForEach(x => x.LoadContent());
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(backgroundTrack);
         }
 
         public void UnloadContent()
         {
+            backgroundTrack.Dispose();
             objs.ForEach(x => x.UnloadContent());
         }
 
