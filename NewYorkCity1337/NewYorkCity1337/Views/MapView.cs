@@ -6,8 +6,6 @@ using NewYorkCity1337.Engine;
 using NewYorkCity1337.Input;
 using NewYorkCity1337.Terrain;
 using NewYorkCity1337.Tiles;
-using NewYorkCity1337.TileEngine;
-using NewYorkCity1337.NewFolder1;
 using NewYorkCity1337.WorldObjects;
 
 namespace NewYorkCity1337.View

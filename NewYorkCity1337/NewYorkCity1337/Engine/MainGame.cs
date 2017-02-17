@@ -19,6 +19,7 @@ namespace NewYorkCity1337.Engine
 
         protected override void Initialize()
         {
+            IsMouseVisible = true;
             _sprites = new SpriteBatch(GraphicsDevice);
             new GameInstance().SetGame(this);
             new SpritesBatchInstance().SetSpritesBatch(_sprites);
