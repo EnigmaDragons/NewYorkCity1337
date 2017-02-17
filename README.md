@@ -2,7 +2,7 @@
 
 ----
 
-Game Hack Nite - 2/17/2017 - Created in 4:30.
+Game Hack Nite - 2/17/2017 - Created in 4 hrs 30 mins.
 
 ----
 
