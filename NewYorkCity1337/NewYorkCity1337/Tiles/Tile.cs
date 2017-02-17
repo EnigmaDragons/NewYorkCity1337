@@ -39,10 +39,10 @@ namespace NewYorkCity1337.Tiles
             gameObjs.ForEach(x => x.Update(deltaTime));
         }
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
-            new DrawnOnTile(background, location).Go();
-            gameObjs.ForEach(x => x.Draw(sprites, location));
+            new DrawOnTile(background, location).Go();
+            gameObjs.ForEach(x => x.Draw(location));
         }
     }
 }

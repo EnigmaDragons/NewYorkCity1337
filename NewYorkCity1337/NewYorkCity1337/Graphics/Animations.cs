@@ -46,7 +46,7 @@ namespace RunehackValley.Graphics
             CurrentAnimation.Update(deltaTime);
         }
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
         }
     }

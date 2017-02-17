@@ -9,7 +9,7 @@ namespace NewYorkCity1337.Tiles
     {
         private List<Tile> tiles = new List<Tile>();
 
-        public Map(params Tile[] tiles)
+        public Map(IEnumerable<Tile> tiles)
         {
             this.tiles.AddRange(tiles);
         }
@@ -29,9 +29,9 @@ namespace NewYorkCity1337.Tiles
             tiles.ForEach(x => x.Update(deltaTime));
         }
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
-            tiles.ForEach(x => x.Draw(sprites));
+            tiles.ForEach(x => x.Draw());
         }
     }
 }

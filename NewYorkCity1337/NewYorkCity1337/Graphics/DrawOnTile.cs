@@ -4,12 +4,12 @@ using NewYorkCity1337.Engine;
 
 namespace NewYorkCity1337.Graphics
 {
-    public class DrawnOnTile
+    public class DrawOnTile
     {
         private readonly Texture2D texture;
         private readonly Vector2 location;
 
-        public DrawnOnTile(Texture2D texture, Vector2 location)
+        public DrawOnTile(Texture2D texture, Vector2 location)
         {
             this.texture = texture;
             this.location = location;

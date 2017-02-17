@@ -62,7 +62,7 @@ namespace RunehackValley.Graphics
 
         public Texture2D CurrentFrame => _sprites[_currentFrame];
 
-        public void Draw(SpriteBatch sprites)
+        public void Draw()
         {
         }
     }

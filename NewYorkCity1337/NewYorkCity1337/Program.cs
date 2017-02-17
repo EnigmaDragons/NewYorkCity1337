@@ -1,5 +1,6 @@
 ﻿using System;
 using NewYorkCity1337.Engine;
+using NewYorkCity1337.View;
 using NewYorkCity1337.Views;
 
 namespace NewYorkCity1337
@@ -16,7 +17,7 @@ namespace NewYorkCity1337
         [STAThread]
         static void Main()
         {
-            using (var game = new MainGame(new GrassTestView()))
+            using (var game = new MainGame(new MapView()))
                 game.Run();
         }
     }

@@ -49,7 +49,7 @@
     <Compile Include="Engine\SpritesBatchInstance.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animations.cs" />
-    <Compile Include="Graphics\DrawnOnTile.cs" />
+    <Compile Include="Graphics\DrawOnTile.cs" />
     <Compile Include="MonoGame\LoadedSong.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
     <Compile Include="MonoGame\RectangleTexture.cs" />

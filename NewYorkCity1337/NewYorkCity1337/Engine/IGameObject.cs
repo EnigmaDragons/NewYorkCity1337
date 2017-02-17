@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace NewYorkCity1337.Engine
 {
@@ -8,6 +7,6 @@ namespace NewYorkCity1337.Engine
         void LoadContent();
         void UnloadContent();
         void Update(GameTime deltaTime);
-        void Draw(SpriteBatch sprites);
+        void Draw();
     }
 }
