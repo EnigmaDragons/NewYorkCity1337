@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 ﻿using Graphics;
+using NewYorkCity1337.Business;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.UI;
 
@@ -9,9 +10,12 @@ namespace NewYorkCity1337.Views
     {
         private LoadedTextures _textures;
         private BuildingSelectionOverlay _overlay;
+        private MoneyAccountOverlay _moneyOverlay;
 
         public void LoadContent()
         {
+            _moneyOverlay = new MoneyAccountOverlay(new MoneyAccount(), new Vector2(100, 10));
+            _moneyOverlay.LoadContent();
             _overlay = new BuildingSelectionOverlay();
             _overlay.LoadContent();
             _textures = new LoadedTextures("grass1", "building1", "building2");
@@ -22,11 +26,13 @@ namespace NewYorkCity1337.Views
         {
             _textures.UnloadContent();
             _overlay.UnloadContent();
+            _moneyOverlay.UnloadContent();
         }
 
         public void Update(GameTime deltaTime)
         {
             _overlay.Update(deltaTime);
+            _moneyOverlay.Update(deltaTime);
         }
 
         public void Draw()
@@ -39,6 +45,7 @@ namespace NewYorkCity1337.Views
             sprites.Draw(_textures["building1"], new Vector2(3 * 32, 5 * 32));
             sprites.Draw(_textures["building2"], new Vector2(8 * 32, 2 * 32));
             _overlay.Draw();
+            _moneyOverlay.Draw();
         }
     }
 }

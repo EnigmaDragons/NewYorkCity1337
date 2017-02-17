@@ -1,6 +1,7 @@
 ﻿using Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewYorkCity1337.Business;
 using NewYorkCity1337.Engine;
 using NewYorkCity1337.Graphics;
 
@@ -8,21 +9,31 @@ namespace NewYorkCity1337.UI
 {
     public class MoneyAccountOverlay : IGameObject
     {
-        private SpriteFont _font;
+        private readonly MoneyAccount _moneyAccount;
+        private readonly Vector2 _screenPosition;
+
         private Texture2D _panelShadow;
         private Texture2D _panelBorder;
         private Texture2D _panel;
 
+        public MoneyAccountOverlay(MoneyAccount moneyAccount, Vector2 screenPosition)
+        {
+            _moneyAccount = moneyAccount;
+            _screenPosition = screenPosition;
+        }
+
         public void LoadContent()
         {
-            _font = DefaultFont.Font;
-            _panelShadow = new RectangleTexture(83, 21, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
-            _panelBorder = new RectangleTexture(82, 20, Color.Black).Create();
+            _panelShadow = new RectangleTexture(84, 22, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
+            _panelBorder = new RectangleTexture(84, 22, Color.Black).Create();
             _panel = new RectangleTexture(80, 18, Color.Gray).Create();
         }
 
         public void UnloadContent()
         {
+            _panelShadow.Dispose();
+            _panelBorder.Dispose();
+            _panel.Dispose();
         }
 
         public void Update(GameTime deltaTime)
@@ -31,6 +42,10 @@ namespace NewYorkCity1337.UI
 
         public void Draw()
         {
+            new DrawOnScreen(_panelShadow, _screenPosition).Go();
+            new DrawOnScreen(_panelBorder, _screenPosition - new Vector2(2, 2)).Go();
+            new DrawOnScreen(_panel, _screenPosition).Go();
+            new DrawTextOnScreen(_moneyAccount.AmountAndCurrency, _screenPosition + new Vector2(2, 2)).Go();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using NewYorkCity1337.Graphics;
 
 namespace NewYorkCity1337.Engine
 {
@@ -23,6 +24,7 @@ namespace NewYorkCity1337.Engine
             _sprites = new SpriteBatch(GraphicsDevice);
             new GameInstance().SetGame(this);
             new SpritesBatchInstance().SetSpritesBatch(_sprites);
+            DefaultFont.Load(Content);
             base.Initialize();
         }
 
