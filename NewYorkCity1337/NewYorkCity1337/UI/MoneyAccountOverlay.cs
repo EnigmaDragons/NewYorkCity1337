@@ -24,9 +24,9 @@ namespace NewYorkCity1337.UI
 
         public void LoadContent()
         {
-            _panelShadow = new RectangleTexture(184, 34, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
-            _panelBorder = new RectangleTexture(184, 34, Color.Black).Create();
-            _panel = new RectangleTexture(180, 30, Color.Gray).Create();
+            _panelShadow = new RectangleTexture(254, 34, Color.FromNonPremultiplied(0, 0, 0, 80)).Create();
+            _panelBorder = new RectangleTexture(254, 34, Color.Black).Create();
+            _panel = new RectangleTexture(250, 30, Color.Gray).Create();
         }
 
         public void UnloadContent()
