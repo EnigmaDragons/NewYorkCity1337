@@ -40,7 +40,9 @@
   <ItemGroup>
     <Compile Include="Buildings\Antenna.cs" />
     <Compile Include="Buildings\BasicBuilding.cs" />
+    <Compile Include="Buildings\Beacon.cs" />
     <Compile Include="Buildings\Building.cs" />
+    <Compile Include="Buildings\Factory.cs" />
     <Compile Include="Buildings\Observatory.cs" />
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\GraphicsDeviceInstance.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Graphics\DefaultFont.cs" />
+    <Compile Include="Graphics\DrawTextOnScreen.cs" />
     <Compile Include="Graphics\TileSize.cs" />
     <Compile Include="Sound\LoadedSoundEffect.cs" />
     <Compile Include="UI\BuildingConstruction.cs" />
@@ -84,6 +87,9 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +126,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Arial.spritefont">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Content\Arial.spritefont" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\SoundEffect\cha-ching.xnb">

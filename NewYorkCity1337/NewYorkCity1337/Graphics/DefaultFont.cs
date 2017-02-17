@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using NewYorkCity1337.Engine;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace NewYorkCity1337.Graphics
 {
@@ -7,9 +7,9 @@ namespace NewYorkCity1337.Graphics
     {
         public static SpriteFont Font { get; set; }
 
-        static DefaultFont()
+        public static void Load(ContentManager content)
         {
-            Font = new GameInstance().Load<SpriteFont>("Arial");
+            Font = content.Load<SpriteFont>("Arial");
         }
     }
 }

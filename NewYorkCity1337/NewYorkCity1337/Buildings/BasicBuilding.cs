@@ -9,6 +9,7 @@ namespace NewYorkCity1337.Buildings
 {
     public class BasicBuilding : Building
     {
+        private TimeSpan _paymentInterval;
         private TimeSpan _timeSinceLastPayment = new TimeSpan(0, 0, 0);
         private readonly string _spriteName;
         private readonly int _income;
@@ -20,8 +21,9 @@ namespace NewYorkCity1337.Buildings
         public string DisplayName { get; }
         public Texture2D DisplayImage => _sprite;
 
-        public BasicBuilding(string displayName, string spriteName, int price, int income)
+        public BasicBuilding(string displayName, string spriteName, int price, int income, TimeSpan paymentInterval)
         {
+            _paymentInterval = paymentInterval;
             DisplayName = displayName;
             _spriteName = spriteName;
             Price = price;
@@ -44,10 +46,10 @@ namespace NewYorkCity1337.Buildings
             if (_moneyAccount == null)
                 return;
 
-            if (_timeSinceLastPayment >= TimeSpan.FromSeconds(5))
+            if (_timeSinceLastPayment >= _paymentInterval)
             {
                 _moneyAccount?.Gain(_income);
-                _timeSinceLastPayment -= TimeSpan.FromSeconds(5);
+                _timeSinceLastPayment -= _paymentInterval;
             }
         }
 
