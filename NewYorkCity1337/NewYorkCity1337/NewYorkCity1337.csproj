@@ -51,6 +51,7 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Graphics\DefaultFont.cs" />
+    <Compile Include="Graphics\DrawRectOnScreen.cs" />
     <Compile Include="Graphics\DrawTextOnScreen.cs" />
     <Compile Include="Graphics\TileSize.cs" />
     <Compile Include="Input\IfMouseIsOnScreen.cs" />
@@ -146,6 +147,12 @@
     <Content Include="Content\Arial.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Arial.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Arial.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Music\Terran Theme 1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

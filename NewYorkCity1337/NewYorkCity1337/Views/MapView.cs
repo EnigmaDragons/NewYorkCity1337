@@ -22,18 +22,18 @@ namespace NewYorkCity1337.View
 
         public MapView()
         {
-            var road = new Random(Guid.NewGuid().GetHashCode()).Next(1, 16);
-            var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 16)
+            var road = new Random(Guid.NewGuid().GetHashCode()).Next(0, 15);
+            var map = new Map(Enumerable.Range(0, 16).SelectMany(x => Enumerable.Range(0, 30)
                 .Select(y => x == road ? new Grass(new TileLocation(x, y), new Road()) : new Grass(new TileLocation(x, y)))));
             new CurrentMap().SetMap(map);
             var moneyAccount = new MoneyAccount();
             objs.Add(map);
             var selectedTile = new SelectedTile();
             objs.Add(selectedTile);
-            var buildingSelection = new BuildingSelectionOverlay(new Vector2(460, 40));
+            var buildingSelection = new BuildingSelectionOverlay(new Vector2(10, 10));
             objs.Add(buildingSelection);
             objs.Add(new BuildingConstruction(moneyAccount, selectedTile, buildingSelection));
-            objs.Add(new MoneyAccountOverlay(moneyAccount, new Vector2(370, 10)));
+            objs.Add(new MoneyAccountOverlay(moneyAccount, new Vector2(100, 10)));
 
         }
 
